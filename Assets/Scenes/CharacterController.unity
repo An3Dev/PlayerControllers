@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  acceleration: 0.2
+  acceleration: 1
   deceleration: 0.9
   jumpHeight: 2
   camera: {fileID: 1922641861}
@@ -1166,7 +1166,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gravity: -9.81
-  airStrafeSpeedMultiplier: 0.4
+  gravityBoost: 5
+  airStrafeSpeedMultiplier: 1
   airDragMultiplier: 1
   isGrounded: 1
 --- !u!1 &1922641858
