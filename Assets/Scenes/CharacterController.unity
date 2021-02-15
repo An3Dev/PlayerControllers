@@ -1159,16 +1159,18 @@ MonoBehaviour:
   speed: 4
   acceleration: 1
   deceleration: 0.9
+  decelerationOffJump: 0.1
   jumpHeight: 2
+  jumpApexTime: 1
   camera: {fileID: 1922641861}
   groundChecker: {fileID: 2126061914}
   ground:
     serializedVersion: 2
     m_Bits: 256
-  gravity: -9.81
-  gravityBoost: 5
-  airStrafeSpeedMultiplier: 1
-  airDragMultiplier: 1
+  gravity: -9
+  gravityBoost: 0
+  airStrafeSpeedMultiplier: 0.3
+  airDragMultiplier: 0.9
   isGrounded: 1
 --- !u!1 &1922641858
 GameObject:
