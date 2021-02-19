@@ -1117,7 +1117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914410030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.46, y: 1.33, z: -0.006}
+  m_LocalPosition: {x: 1.46, y: 0.64, z: -0.006}
   m_LocalScale: {x: 1, y: 0.8142109, z: 1.0000005}
   m_Children:
   - {fileID: 164417391}
@@ -1161,7 +1161,6 @@ MonoBehaviour:
   deceleration: 0.9
   decelerationOffJump: 0.1
   jumpHeight: 2
-  jumpApexTime: 1
   camera: {fileID: 1922641861}
   groundChecker: {fileID: 2126061914}
   ground:
@@ -1170,7 +1169,7 @@ MonoBehaviour:
   gravity: -9
   gravityBoost: 0
   airStrafeSpeedMultiplier: 0.3
-  airDragMultiplier: 0.9
+  airDragMultiplier: 1
   isGrounded: 1
 --- !u!1 &1922641858
 GameObject:
@@ -1224,7 +1223,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 80
+  field of view: 71
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

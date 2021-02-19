@@ -9,7 +9,6 @@ public class Controller : MonoBehaviour
     [SerializeField] float deceleration;
     [SerializeField] float decelerationOffJump = 0.1f;
     [SerializeField] float jumpHeight = 2f;
-    [SerializeField] float jumpApexTime = 1f;
 
     [SerializeField] Transform camera;
     [SerializeField] Transform groundChecker;
@@ -46,7 +45,21 @@ public class Controller : MonoBehaviour
         zInput = Input.GetAxis("Vertical");
 
         isGrounded = Physics.CheckSphere(groundChecker.position, 0.2f, ground, QueryTriggerInteraction.Ignore);
+        Move();
 
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Debug.Break();
+        }
+
+        if (!isGrounded && velocity.y == 0)
+        {
+            Debug.Log("Zero");
+        }
+    }
+
+    private void Move()
+    {
         Vector3 flatForward = new Vector3(camera.forward.x, 0, camera.forward.z).normalized;
         Vector3 flatRight = new Vector3(camera.right.x, 0, camera.right.z).normalized;
 
@@ -78,11 +91,6 @@ public class Controller : MonoBehaviour
 
         ClampVelocity();
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Debug.Break();
-        }
-
         if (isGrounded)
         {
             Decelerate(flatRight, flatForward);
@@ -90,7 +98,8 @@ public class Controller : MonoBehaviour
             {
                 velocity.y = 0;
             }
-        } else
+        }
+        else
         {
             velocity.y += gravity * Time.deltaTime;
 
@@ -105,9 +114,9 @@ public class Controller : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = 0;
-            velocity.y += Mathf.Sqrt((jumpHeight + controller.height / 2)* -2 * gravity) * jumpApexTime;
+            velocity.y += Mathf.Sqrt((jumpHeight + controller.height / 2) * -2 * gravity);
             //Debug.Break();
-            
+
             isGrounded = false;
         }
 
