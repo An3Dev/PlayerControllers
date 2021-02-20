@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿// Written by Andres Nedilskyj
+// Date: 02/19/2021
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Player Controller Script using Unity's Character Controller
 public class Controller : MonoBehaviour
 {
     [SerializeField] float mouseXSensitivity = 1, mouseYSensitivity = 1;
